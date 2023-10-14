@@ -1,0 +1,62 @@
+{% extends 'adminhome.html' %}
+{% block 'body' %}
+<h4 align="center" style="color:red">{{msg}}</h4>
+<h2 align="center"><u>Update Student</u></h2>
+<br>
+<form method="post" action="{% url 'studentupdated' %}">
+    {% csrf_token%}
+    <table align="center" width="40%" height="30%">
+        <tr align="center" bgcolor="grey">
+            <td><label>Student Id</label></td>
+            <td><input type="number" name="sid" value="{{sid}}" readonly></td>
+        </tr>
+        <tr align="center">
+            <td><label> Department</label></td>
+             <td>
+                  <select name="dept" required>
+                    <option value="">--select--</option>
+                    <option value="CSE(H)">CSE(Honors)</option>
+                    <option value="CSE(R)">CSE(Regular)</option>
+                    <option value="CSIT">CS&IT</option>
+                </select>
+             </td>
+         </tr>
+        <tr align="center">
+            <td><label>Program</label></td>
+             <td>
+                  <select name="program" required>
+                    <option value="">--select--</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="M.Tech">M.Tech</option>
+                </select>
+             </td>
+         </tr>
+        <tr align="center">
+            <td><label>Semester</label></td>
+             <td>
+                  <select name="sem" required>
+                    <option value="">--select--</option>
+                    <option value="ODD">ODD SEM</option>
+                    <option value="EVEN">EVEN SEM</option>
+                </select>
+             </td>
+         </tr>
+         <tr align="center">
+            <td><label>Year</label></td>
+             <td><input type="number" name="year"  required></td>
+         </tr>
+         <tr align="center">
+            <td><label>Email</label></td>
+             <td><input type="text" name="email"  required></td>
+         </tr>
+         <tr align="center">
+            <td><label>Contact</label></td>
+             <td><input type="number" name="contact"  required></td>
+         </tr>
+         <tr align="center">
+            <td><input type="submit" value="update" class="addbutton"></td>
+            <td><input type="reset" value="clear" class="addbutton"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

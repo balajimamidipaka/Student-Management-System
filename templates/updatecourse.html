@@ -1,0 +1,55 @@
+{% extends 'adminhome.html' %}
+{% block 'body' %}
+<h3 align="center"><u>UPDATE COURSE</u></h3>
+<h5>
+TOTAL COURSES={{count}}
+</h5>
+<!-- <input class="form-control" id="myInput" type="text" placeholder="Course Title"><br>-->
+<table align="center" border="2" width="100%" height="30%" class="table table-bordered table-striped">
+<thead >
+    <tr bgcolor="black" align="center" style="color:white">
+        <td>Course Id</td>
+        <td>Department</td>
+        <td>Program</td>
+        <td>Academic Year</td>
+        <td>Semester</td>
+        <td>Year</td>
+        <td>Course Code</td>
+        <td>Course Title</td>
+        <td>LTPS</td>
+        <td>Credits</td>
+        <td>Action</td>
+    </tr>
+</thead>
+ <tbody  bgcolor="lightgreen" style="color:black">
+    {%for course in courses %}
+    <tr align="center">
+        <td>{{course.id}}</td>
+        <td>{{course.department}}</td>
+        <td>{{course.program}}</td>
+        <td>{{course.academicyear}}</td>
+        <td>{{course.semester}}</td>
+        <td>{{course.year}}</td>
+        <td>{{course.coursecode}}</td>
+        <td>{{course.coursetitle}}</td>
+        <td>{{course.ltps}}</td>
+        <td>{{course.credits}}</td>
+        <td>
+            <a href="/courseupdation/{{course.id}}" class="addbutton">Update</a>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--  $("#myInput").on("keyup", function() {-->
+<!--    var value = $(this).val().toLowerCase();-->
+<!--    $("#myDIV *").filter(function() {-->
+<!--      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)-->
+<!--    });-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
+{% endblock %}

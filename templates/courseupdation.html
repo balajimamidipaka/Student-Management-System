@@ -1,0 +1,31 @@
+{% extends 'adminhome.html' %}
+{% block 'body' %}
+<h4 align="center" style="color:red">{{msg}}</h4>
+<h2 align="center"><u>Update Course</u></h2>
+<br>
+<form method="post" action="{% url 'courseupdated' %}">
+    {% csrf_token%}
+    <table align="center" width="40%" height="30%">
+        <tr align="center" bgcolor="grey">
+            <td><label>Course Id</label></td>
+            <td><input type="number" name="cid" value="{{cid}}" readonly></td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter Course Title</label></td>
+             <td><input type="text" name="ctitle" required></td>
+         </tr>
+        <tr align="center">
+            <td><label>LTPS</label></td>
+             <td><input type="text" name="ltps" placeholder="X-X-X-X" required></td>
+         </tr>
+        <tr align="center">
+            <td><label>Credits</label></td>
+             <td><input type="number" name="credits" min="0.0" max="8.0" required></td>
+         </tr>
+         <tr align="center">
+            <td><input type="submit" value="update" class="addbutton"></td>
+            <td><input type="reset" value="clear" class="addbutton"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

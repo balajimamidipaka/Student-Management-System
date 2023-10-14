@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<br>
+  <h1 align="center" style="color:green">STUDENT ACADEMIC MANAGEMENT SYSTEM</h1>
+  <br><br>
+  <nav class="navbar">
+       <div class="logo">BALA</div>
+      <ul class="nav-links">
+          <div class="menu">
+<li> <a href="{% url 'home' %}">Home</a>&nbsp&nbsp;&nbsp;</li>
+<li> <a href="{% url 'about' %}">About Project</a>&nbsp;&nbsp;&nbsp;</li>
+
+<li class="services">
+
+    <a href="#">Login</a>
+
+    <ul class= "dropdown">
+        <a href="{% url 'studentlogin' %}">Student</a>
+        <a href="{% url 'facultylogin' %}">Faculty</a>
+        <a href="{% url 'login' %}">Admin</a>
+    </ul>
+</li>
+<li> <a href="{% url 'contact' %}">Contact Us</a>&nbsp;&nbsp;&nbsp;</li>
+              </div>
+          </ul>
+  </nav>
+
+  {% block 'body' %}
+<br>
+<!--<h1 align="center" >HOME</h1>-->
+<!--<br>-->
+<center>
+    <img src="{% static 'images/djangohome.png' %}" style="height:500px;width:800px">
+</center>
+  {% endblock %}
+</body>
+</html>

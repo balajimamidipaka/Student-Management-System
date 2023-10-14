@@ -1,0 +1,51 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+<!--     <meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/adminstyle.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/facultystyle.css' %}">
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+</head>
+<body bgcolor="lightgrey">
+<br>
+  <h1 align="center" style="color:green">STUDENT ACADEMIC MANAGEMENT SYSTEM</h1>
+  <h2 align="right" style="color:black" ><b>welcome {{fid}}</b></h2>
+<!--  <nav class="navbar">-->
+<!--      <div class="logo">BALA</div>-->
+<!--       <ul class="nav-links">-->
+<!--            <div class="menu">-->
+<div style="background-color:lightblue;padding:20px;font-size:15pt">
+ <a href="{% url 'facultyhome' %}">Home</a>&nbsp&nbsp;&nbsp;
+<a href="{% url 'facultychangepwd' %}">Change Password</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'facultycourses' %}">My Courses</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'facultyaddcontent' %}">Course Content</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'facultylogin' %}">Logout</a>&nbsp;&nbsp;&nbsp;
+</div>
+<!--            </div>-->
+<!--       </ul>-->
+<!--  </nav>-->
+
+<br><br>
+{% block 'body' %}
+<br><br>
+<center>
+<div class="card">
+  <div class="container" >
+    <h4><b>{{faculty.facultyid}}-{{faculty.fullname}}</b></h4>
+    <p>{{faculty.department}}</p>
+      <p>{{faculty.qualification}}</p>
+      <p>{{faculty.designation}}</p>
+      <p>{{faculty.email}}</p>
+      <p>{{faculty.contact}}</p>
+  </div>
+</div>
+    </center>
+{% endblock %}
+
+</body>
+</html>
